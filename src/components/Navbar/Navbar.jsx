@@ -12,13 +12,13 @@ const Navbar = () => {
                 <NavLink to='/dialogs' style={({isActive}) => ({color:isActive ? 'blue' : 'white'})}>Messages</NavLink>
             </div>
             <div className={s.item}>
-                <NavLink to='/News' style={({isActive}) => ({color:isActive ? 'blue' : 'white'})}>News feed</NavLink>
+                <NavLink to='/news' style={({isActive}) => ({color:isActive ? 'blue' : 'white'})}>News feed</NavLink>
             </div>
             <div className={s.item}>
-                <NavLink to='/Music' style={({isActive}) => ({color:isActive ? 'blue' : 'white'})}>Music</NavLink>
+                <NavLink to='/music' style={({isActive}) => ({color:isActive ? 'blue' : 'white'})}>Music</NavLink>
             </div>
             <div className={s.item}>
-                <NavLink to='/Settings' style={({isActive}) => ({color:isActive ? 'blue' : 'white'})}>Settings</NavLink>
+                <NavLink to='/settings' style={({isActive}) => ({color:isActive ? 'blue' : 'white'})}>Settings</NavLink>
             </div>
         </nav>
     )

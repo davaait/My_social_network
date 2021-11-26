@@ -1,0 +1,16 @@
+.sidebar {
+    display: grid;
+    grid-template-rows: 2;
+    grid-template-areas: "i i i";
+}
+
+.sidebarItem {
+    padding: 0;
+    grid-area: i;
+}
+
+.sidebarItem img {
+    width: 70px;
+    height: 50px;
+    border-radius: 50px;
+}

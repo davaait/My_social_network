@@ -4,25 +4,23 @@ import Header from "./components/Header/Header.jsx";
 import Navbar from "./components/Navbar/Navbar.jsx";
 import Profile from "./components/Profile/Profile.jsx";
 import Dialogs from "./components/Dialogs/Dialogs.jsx";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
+import Sidebar from "./components/Sidebar/Sidebar";
 
 function App(props) {
     return (
-        <BrowserRouter>
-            <div className='app-wrapper'>
-                <Header/>
-                <Navbar/>
-                <div className='app-wrapper-content'>
-                    <Routes>
-                        <Route path='/profile/*' element={<Profile />}/>
-                        <Route path='/dialogs/*' element={<Dialogs />}/>
-                        {/*<Route path='/news/*' element={<News/>}/>
-                        <Route path='/music/*' element={<Music/>}/>
-                        <Route path='/settings/*' element={<Settings/>}/>*/}
-                    </Routes>
-                </div>
+        <div className='app-wrapper'>
+            <Header/>
+            <Navbar/>
+            <Sidebar state={props.state.sidebar}/>
+            <div className='app-wrapper-content'>
+                <Routes>
+                    <Route path='/dialogs/*' render={() => <Dialogs state={props.state.dialogsPage}/>}/>
+                    <Route path='/profile/*'
+                           render={() => <Profile state={props.state.profilePage} addPost={props.addPost}/>}/>
+                </Routes>
             </div>
-        </BrowserRouter>
+        </div>
     );
 }
 
